@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- METADATOS DE PROPUESTA - SISTEMA KNOWMAD -->
+    <!-- PROPUESTA_TITULO: Vive sin Cobertura - Propuesta Minimalista -->
+    <!-- PROPUESTA_DESCRIPCION: Diseño limpio y esencial que prioriza el contenido, con una interfaz intuitiva y eficiente para el usuario. -->
+    
+    <!-- Alternativamente, también puedes usar meta tags: -->
+    <meta name="propuesta-titulo" content="Vive sin Cobertura - Propuesta Minimalista">
+    <meta name="propuesta-descripcion" content="Diseño limpio y esencial que prioriza el contenido, con una interfaz intuitiva y eficiente para el usuario.">
+    
+    <title>Vive sin cobertura</title>
+    <link rel="icon" href="https://uploader.knowmadproject.com/uploads/favicon.png">
+    <!-- Fuente Pattaya de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Pattaya', sans-serif;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 40px 0;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+        
+        /* HEADER */
+        header {
+            background-color: #ff3131;
+            color: #f0e9d7;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            gap: 60px;
+        }
+        
+        .logo {
+            width: 200px;
+        }
+        
+        .menu-hamburguesa {
+            display: none;
+            background: none;
+            border: none;
+            color: #f0e9d7;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            color: #f0e9d7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #fff;
+        }
+        
+        /* HERO */
+        .hero {
+            background-color: #ff3131;
+            color: #f0e9d7;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            /* Importante: No transformar a mayúsculas */
+            color: #f0e9d7;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f0e9d7;
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+        }
+        
+        .hashtag {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        
+        /* ESTUDIO */
+        .estudio {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .estudio-item {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .estudio-item img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .estudio-item h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* MANIFIESTO */
+        .manifiesto {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .manifiesto-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+        }
+        
+        .manifiesto-item {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .manifiesto-item img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .manifiesto-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* EXPERTOS */
+        .expertos {
+            padding: 80px 0;
+        }
+        
+        .expertos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .experto-item {
+            text-align: center;
+        }
+        
+        .experto-item img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+        
+        .experto-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            filter: grayscale(0%);
+        }
+        
+        /* ME COMPROMETO */
+        .compromiso {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .compromiso h2 {
+            text-transform: none;
+        }
+        
+        .compromiso-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .compromiso-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .compromiso-item {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .compromiso-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .compromiso-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .compromiso-item p {
+            margin-bottom: 5px;
+        }
+        
+        .compromiso-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .compromiso-quote {
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 60px;
+            color: #333;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        /* Modal para compartir */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            max-width: 80%;
+            max-height: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 70vh;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .share-buttons {
+            margin-top: 20px;
+        }
+        
+        .share-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid, .expertos-grid, .compromiso-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                margin-top: 20px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .grid, .expertos-grid, .compromiso-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .header-container {
+                justify-content: space-between;
+                gap: 30px;
+            }
+            
+            .logo {
+                width: 120px;
+                order: 2;
+            }
+            
+            .menu-hamburguesa {
+                display: block;
+                order: 1;
+            }
+            
+            nav {
+                order: 3;
+            }
+            
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100vw;
+                margin-left: -5vw;
+                background: #ff3131;
+                flex-direction: column;
+                padding: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                padding: 15px 5vw;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="inicio">
+        <div class="container header-container">
+            <img src="https://uploader.knowmadproject.com/uploads/logo.png" alt="Vive sin cobertura" class="logo">
+            <button class="menu-hamburguesa" id="menuHamburguesa">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#estudio">Estudio</a></li>
+                    <li><a href="#manifiesto">Manifiesto</a></li>
+                    <li><a href="#expertos">Expertos</a></li>
+                    <li><a href="#compromiso">Me comprometo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Vive como si estuvieras sin cobertura</h1>
+            <p>Movimiento social por una crianza más presente, que recupere los momentos de calidad sin pantallas en familia.</p>
+            <a href="#manifiesto" class="btn">Descubre el manifiesto</a>
+            <p>Deja el móvil a un lado y únete al movimiento</p>
+            <p class="hashtag">#ViveSinCobertura</p>
+        </div>
+    </section>
+
+    <!-- ESTUDIO -->
+    <section class="estudio" id="estudio">
+        <div class="container">
+            <h2>Resultados más relevantes</h2>
+            <div class="grid">
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio1.webp" alt="Estudio 1">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio2.webp" alt="Estudio 2">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio3.webp" alt="Estudio 3">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio4.webp" alt="Estudio 4">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio5.webp" alt="Estudio 5">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div class="estudio-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/estudio6.webp" alt="Estudio 6">
+                    <h3>Lorem Ipsum is simply dummy</h3>
+                    <p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFIESTO -->
+    <section class="manifiesto" id="manifiesto">
+        <div class="container">
+            <h2>Manifiesto 'Vive como si estuvieras sin cobertura'</h2>
+            <p class="manifiesto-subtitle">Las pantallas nos conectan con el mundo, pero a veces nos desconectan de quienes más nos necesitan: nuestros hijos e hijas. Este manifiesto representa el compromiso de madres y padres por una crianza más presente, consciente, sin filtros y libre de interferencias digitales.</p>
+            
+            <div class="grid">
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto1.webp" alt="Momentos sagrados sin pantallas">
+                    <h3>Momentos sagrados sin pantallas</h3>
+                    <p>Nos comprometemos a crear momentos sin cobertura en familia. Aunque haya señal, apagamos las notificaciones para conectar entre nosotros.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto2.webp" alt="Volvemos a jugar sin distracciones">
+                    <h3>Volvemos a jugar sin distracciones</h3>
+                    <p>El juego es el lenguaje de los niños, es su forma de conectar con nosotros. Nos comprometemos a jugar sin pantallas de por medio.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto3.webp" alt="No metemos el móvil en la cama">
+                    <h3>No metemos el móvil en la cama</h3>
+                    <p>En casa, hay espacios libres de pantallas, el dormitorio es uno de ellos. La tele, la tablet, el móvil o cualquier tecnología se encuentran en zonas comunes.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto4.webp" alt="El móvil no es una niñera ni un chupete emocional">
+                    <h3>El móvil no es una niñera ni un chupete emocional</h3>
+                    <p>Educar es acompañar, no entretener ni calmar con pantallas.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto5.webp" alt="El móvil no es nuestro refugio emocional">
+                    <h3>El móvil no es nuestro refugio emocional</h3>
+                    <p>No huimos a la pantalla cuando la vida se pone difícil. Afrontamos, conversamos, respiramos, acompañamos.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto6.webp" alt="No hacemos sharenting">
+                    <h3>No hacemos sharenting</h3>
+                    <p>Publicar fotos o vídeos suyos en redes sociales no es compartir, es exponer. Y nuestro papel como madres y padres es el de proteger.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto7.webp" alt="La mesa es un espacio de conexión, no de distracción">
+                    <h3>La mesa es un espacio de conexión, no de distracción</h3>
+                    <p>Las comidas en familia son momentos clave para hablar, escucharnos, conectar y fortalecer el vínculo.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto8.webp" alt="La naturaleza no necesita filtros">
+                    <h3>La naturaleza no necesita filtros</h3>
+                    <p>Los paseos, las excursiones y el aire libre son oportunidades para reconectar con la vida real. Nos comprometemos a hacer planes en familia, sin pantallas, donde lo importante no se graba, se vive.</p>
+                </div>
+                <div class="manifiesto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/manifiesto9.webp" alt="Somos los principales 'influencers' de nuestros hijos">
+                    <h3>Somos los principales 'influencers' de nuestros hijos</h3>
+                    <p>Si queremos que hagan un uso saludable de la tecnología, debemos empezar haciéndolo nosotros primero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTOS -->
+    <section class="expertos" id="expertos">
+        <div class="container">
+            <h2>Expertos que apoyan el manifiesto</h2>
+            <div class="expertos-grid">
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/Alberto-Soler.webp" alt="Alberto Soler">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/Marc-Masip.webp" alt="Marc Masip">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/Nora-Kurtin.webp" alt="Nora Kurtin">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/Rafa-Guerrero.webp" alt="Rafa Guerrero">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/Santos-Solano.webp" alt="Santos Solano">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/silvia-alava.webp" alt="Silvia Álava">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/laura_cuesta.webp" alt="Laura Cuesta">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/aitor-sanchez.webp" alt="Aitor Sánchez">
+                </div>
+                <div class="experto-item">
+                    <img src="https://uploader.knowmadproject.com/uploads/javier_romero.webp" alt="Javier Romero">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ME COMPROMETO -->
+    <section class="compromiso" id="compromiso">
+        <div class="container">
+            <h2>Elige tu momento sin cobertura, y compártelo en redes</h2>
+            <p class="compromiso-subtitle">Haz clic sobre la imagen que quieras descargar, y luego súbela en tus redes con el hashtag #ViveSinCobertura</p>
+            
+            <div class="compromiso-grid">
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso1.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso1.webp" alt="Jugar en familia como si estuviera sin cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Jugar en familia como si estuviera sin cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso2.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso2.webp" alt="Ir al cine como si estuviera sin cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Ir al cine como si estuviera sin cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso3.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso3.webp" alt="Descansar como si estuviera sin cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Descansar como si estuviera sin cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso4.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso4.webp" alt="Comer en familia como si estuviera sin cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Comer en familia como si estuviera sin cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso5.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso5.webp" alt="Disfrutar de planes en familia como si no tuviera cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Disfrutar de planes en familia como si no tuviera cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+                <div class="compromiso-item" data-img="https://uploader.knowmadproject.com/uploads/compromiso6.webp">
+                    <img src="https://uploader.knowmadproject.com/uploads/compromiso6.webp" alt="Vivir como si estuviera sin cobertura">
+                    <p>Me comprometo a</p>
+                    <h3>Vivir como si estuviera sin cobertura</h3>
+                    <p>#ViveSinCobertura</p>
+                </div>
+            </div>
+            
+            <h3 class="compromiso-quote">La conexión más importante no necesita WIFI #ViveSinCobertura</h3>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Contacto</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+            </div>
+            <p>&copy; 2023 Vive Sin Cobertura. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL PARA COMPARTIR -->
+    <div class="modal" id="shareModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Imagen para compartir">
+            <div class="share-buttons">
+                <button class="share-button" id="shareNative">Compartir</button>
+                <button class="share-button" id="downloadImage">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal para compartir
+            const modal = document.getElementById('shareModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeModal = document.querySelector('.close-modal');
+            const compromisosItems = document.querySelectorAll('.compromiso-item');
+            const shareNativeBtn = document.getElementById('shareNative');
+            const downloadBtn = document.getElementById('downloadImage');
+            
+            // Abrir modal al hacer clic en una imagen
+            compromisosItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    modalImg.src = imgSrc;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Cerrar modal
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Cerrar modal al hacer clic fuera de él
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Compartir nativo (si el navegador lo soporta)
+            shareNativeBtn.addEventListener('click', function() {
+                if (navigator.share) {
+                    fetch(modalImg.src)
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const file = new File([blob], 'vivesincobertura.webp', { type: 'image/webp' });
+                            navigator.share({
+                                title: 'Vive Sin Cobertura',
+                                text: 'Me uno al movimiento #ViveSinCobertura',
+                                files: [file]
+                            })
+                            .catch(error => console.log('Error al compartir:', error));
+                        });
+                } else {
+                    alert('Tu navegador no soporta la función de compartir. Puedes descargar la imagen y compartirla manualmente.');
+                }
+            });
+            
+            // Descargar imagen
+            downloadBtn.addEventListener('click', function() {
+                const link = document.createElement('a');
+                link.href = modalImg.src;
+                link.download = 'vivesincobertura.webp';
+                link.click();
+            });
+            
+            // Navegación suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Menú hamburguesa
+            const menuBtn = document.getElementById('menuHamburguesa');
+            const navUl = document.querySelector('nav ul');
+            menuBtn.addEventListener('click', function() {
+                navUl.classList.toggle('active');
+            });
+            // Cerrar menú al hacer click fuera
+            document.addEventListener('click', function(e) {
+                if (!menuBtn.contains(e.target) && !navUl.contains(e.target)) {
+                    navUl.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

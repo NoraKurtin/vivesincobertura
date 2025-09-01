@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- METADATOS DE PROPUESTA - SISTEMA KNOWMAD -->
+    <!-- PROPUESTA_TITULO: Vive sin Cobertura - Propuesta Clásica -->
+    <!-- PROPUESTA_DESCRIPCION: Diseño tradicional y atemporal con elementos estilísticos que transmiten confianza y estabilidad. Ideal para un público amplio y variado. -->
+    
+    <!-- Alternativamente, también puedes usar meta tags: -->
+    <meta name="propuesta-titulo" content="Vive sin Cobertura - Propuesta Clásica">
+    <meta name="propuesta-descripcion" content="Diseño tradicional y atemporal con elementos estilísticos que transmiten confianza y estabilidad. Ideal para un público amplio y variado.">
+    
+    <title>VIVE SIN COBERTURA</title>
+    <link rel="icon" href="https://uploader.knowmadproject.com/uploads/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+:root {
+    --primary-color: #ff3131;
+    --secondary-color: #f0e9d7;
+    --text-dark: #333;
+    --text-light: #f0e9d7;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pattaya', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: #666;
+}
+
+/* Header y navegación */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 0 1rem;
+}
+
+.menu-items a {
+    color: var(--text-light);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.menu-items a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.menu-items a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+}
+
+.hero .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta, .hashtag {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hashtag {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sección Estudio */
+.estudio {
+    background-color: #fff;
+    position: relative;
+}
+
+.grid-estudio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.estudio-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.estudio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.estudio-item .img-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.estudio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.estudio-item:hover img {
+    transform: scale(1.05);
+}
+
+.estudio-item .contenido {
+    padding: 1.5rem;
+}
+
+/* Sección Manifiesto */
+.manifiesto {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.grid-manifiesto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.manifiesto-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.manifiesto-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.manifiesto-item .img-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manifiesto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.manifiesto-item:hover img {
+    transform: scale(1.1);
+}
+
+.manifiesto-item h3 {
+    margin: 1rem 0;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.manifiesto-item p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Sección Expertos */
+.expertos {
+    background-color: #fff;
+}
+
+.grid-expertos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experto-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 2/3;
+    transition: var(--transition);
+}
+
+.experto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.experto-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.experto-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Sección Compromiso */
+.compromiso {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.grid-compromiso {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.compromiso-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.compromiso-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.compromiso-item .img-container {
+    position: relative;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.compromiso-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.compromiso-item:hover img {
+    transform: scale(1.05);
+}
+
+.compromiso-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.compromiso-item:hover .overlay {
+    opacity: 1;
+}
+
+.compromiso-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.compromiso-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.compromiso-item .hashtag {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.share-btn:hover {
+    background-color: #e62020;
+    transform: scale(1.05);
+}
+
+.cita-final {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 4rem;
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-links ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.lightbox-content {
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    margin: 5% auto;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lightbox-share {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.btn-share {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-share:hover {
+    background-color: #e62020;
+}
+
+/* Botón volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 99;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #e62020;
+    transform: translateY(-5px);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .grid-estudio,
+    .grid-manifiesto,
+    .grid-compromiso {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-expertos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .menu-items {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    .menu-items.active {
+        right: 0;
+    }
+    
+    .menu-items li {
+        margin: 1.5rem 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .grid-expertos {
+        grid-template-columns: 1fr;
+    }
+    
+    .cita-final {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos adicionales para el header */
+header.scrolled {
+    padding: 0.5rem 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header.scrolled .logo {
+    height: 40px;
+}
+
+/* Transiciones suaves para el header */
+header, .logo {
+    transition: all 0.3s ease;
+}
+
+/* Ajustes adicionales para el hover de los elementos del menú */
+.menu-items a:hover {
+    color: white;
+}
+
+.logo-link {
+    display: block;
+}
+
+/* Transición para el toggle del menú */
+.menu-toggle {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+} 
+    </style>
+</head>
+<body>
+    <header id="inicio">
+        <div class="navbar">
+            <a href="#inicio" class="logo-link">
+                <img src="https://uploader.knowmadproject.com/uploads/logo.png" alt="Logo Vive sin cobertura" class="logo">
+            </a>
+            <div class="menu">
+                <ul class="menu-items">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#estudio">Estudio</a></li>
+                    <li><a href="#manifiesto">Manifiesto</a></li>
+                    <li><a href="#expertos">Expertos</a></li>
+                    <li><a href="#compromiso">Comprométete</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <h1>#VIVE COMO SI ESTUVIERAS SIN COBERTURA</h1>
+            <p class="subtitle">Movimiento social por una crianza más presente, que recupere los momentos de calidad sin pantallas en familia.</p>
+            <a href="#manifiesto" class="btn-primary">DESCUBRE EL MANIFIESTO</a>
+            <p class="cta">Deja el móvil a un lado y únete al movimiento</p>
+            <p class="hashtag">#ViveSinCobertura</p>
+        </div>
+    </section>
+
+    <main>
+        <section id="estudio" class="estudio">
+            <div class="container">
+                <h2>Resultados más relevantes</h2>
+                <div class="grid-estudio">
+                    <div class="estudio-item" data-aos="fade-up">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio1.webp" alt="Estudio resultado 1">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    <div class="estudio-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio2.webp" alt="Estudio resultado 2">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    <div class="estudio-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio3.webp" alt="Estudio resultado 3">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    <div class="estudio-item" data-aos="fade-up">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio4.webp" alt="Estudio resultado 4">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    <div class="estudio-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio5.webp" alt="Estudio resultado 5">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                    <div class="estudio-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/estudio6.webp" alt="Estudio resultado 6">
+                        </div>
+                        <div class="contenido">
+                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="manifiesto" class="manifiesto">
+            <div class="container">
+                <h2>Manifiesto 'Vive como si estuvieras sin cobertura'</h2>
+                <p class="subtitle">Las pantallas nos conectan con el mundo, pero a veces nos desconectan de quienes más nos necesitan: nuestros hijos e hijas. Este manifiesto representa el compromiso de madres y padres por una crianza más presente, consciente, sin filtros y libre de interferencias digitales.</p>
+                
+                <div class="grid-manifiesto">
+                    <div class="manifiesto-item" data-aos="zoom-in">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto1.webp" alt="Momentos sagrados sin pantallas">
+                        </div>
+                        <h3>Momentos sagrados sin pantallas</h3>
+                        <p>Nos comprometemos a crear momentos sin cobertura en familia. Aunque haya señal, apagamos las notificaciones para conectar entre nosotros.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto2.webp" alt="Volvemos a jugar sin distracciones">
+                        </div>
+                        <h3>Volvemos a jugar sin distracciones</h3>
+                        <p>El juego es el lenguaje de los niños, es su forma de conectar con nosotros. Nos comprometemos a jugar sin pantallas de por medio.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto3.webp" alt="No metemos el móvil en la cama">
+                        </div>
+                        <h3>No metemos el móvil en la cama</h3>
+                        <p>En casa, hay espacios libres de pantallas, el dormitorio es uno de ellos. La tele, la tablet, el móvil o cualquier tecnología se encuentran en zonas comunes.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto4.webp" alt="El móvil no es una niñera ni un chupete emocional">
+                        </div>
+                        <h3>El móvil no es una niñera ni un chupete emocional</h3>
+                        <p>Educar es acompañar, no entretener ni calmar con pantallas.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto5.webp" alt="El móvil no es nuestro refugio emocional">
+                        </div>
+                        <h3>El móvil no es nuestro refugio emocional</h3>
+                        <p>No huimos a la pantalla cuando la vida se pone difícil. Afrontamos, conversamos, respiramos, acompañamos.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto6.webp" alt="No hacemos sharenting">
+                        </div>
+                        <h3>No hacemos sharenting</h3>
+                        <p>Publicar fotos o vídeos suyos en redes sociales no es compartir, es exponer. Y nuestro papel como madres y padres es el de proteger.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto7.webp" alt="La mesa es un espacio de conexión, no de distracción">
+                        </div>
+                        <h3>La mesa es un espacio de conexión, no de distracción</h3>
+                        <p>Las comidas en familia son momentos clave para hablar, escucharnos, conectar y fortalecer el vínculo.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto8.webp" alt="La naturaleza no necesita filtros">
+                        </div>
+                        <h3>La naturaleza no necesita filtros</h3>
+                        <p>Los paseos, las excursiones y el aire libre son oportunidades para reconectar con la vida real. Nos comprometemos a hacer planes en familia, sin pantallas, donde lo importante no se graba, se vive.</p>
+                    </div>
+                    <div class="manifiesto-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/manifiesto9.webp" alt="Somos los principales 'influencers' de nuestros hijos">
+                        </div>
+                        <h3>Somos los principales 'influencers' de nuestros hijos</h3>
+                        <p>Si queremos que hagan un uso saludable de la tecnología, debemos empezar haciéndolo nosotros primero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertos" class="expertos">
+            <div class="container">
+                <h2>Expertos que apoyan el manifiesto</h2>
+                <div class="grid-expertos">
+                    <div class="experto-item" data-aos="flip-left">
+                        <img src="https://uploader.knowmadproject.com/uploads/Alberto-Soler.webp" alt="Alberto Soler">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="100">
+                        <img src="https://uploader.knowmadproject.com/uploads/Marc-Masip.webp" alt="Marc Masip">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="200">
+                        <img src="https://uploader.knowmadproject.com/uploads/Nora-Kurtin.webp" alt="Nora Kurtin">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="300">
+                        <img src="https://uploader.knowmadproject.com/uploads/Rafa-Guerrero.webp" alt="Rafa Guerrero">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left">
+                        <img src="https://uploader.knowmadproject.com/uploads/Santos-Solano.webp" alt="Santos Solano">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="100">
+                        <img src="https://uploader.knowmadproject.com/uploads/silvia-alava.webp" alt="Silvia Álava">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="200">
+                        <img src="https://uploader.knowmadproject.com/uploads/laura_cuesta.webp" alt="Laura Cuesta">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left" data-aos-delay="300">
+                        <img src="https://uploader.knowmadproject.com/uploads/aitor-sanchez.webp" alt="Aitor Sánchez">
+                    </div>
+                    <div class="experto-item" data-aos="flip-left">
+                        <img src="https://uploader.knowmadproject.com/uploads/javier_romero.webp" alt="Javier Romero">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compromiso" class="compromiso">
+            <div class="container">
+                <h2>ELIGE TU MOMENTO SIN COBERTURA, Y COMPÁRTELO EN REDES</h2>
+                <p class="subtitle">Haz clic sobre la imagen que quieras descargar, y luego súbela en tus redes con el hashtag #ViveSinCobertura</p>
+                
+                <div class="grid-compromiso">
+                    <div class="compromiso-item" data-aos="fade-up">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso1.webp" alt="Jugar en familia sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Jugar en familia como si estuviera sin cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compromiso-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso2.webp" alt="Ir al cine sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Ir al cine como si estuviera sin cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compromiso-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso3.webp" alt="Descansar sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Descansar como si estuviera sin cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compromiso-item" data-aos="fade-up">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso4.webp" alt="Comer en familia sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Comer en familia como si estuviera sin cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compromiso-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso5.webp" alt="Disfrutar de planes en familia sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Disfrutar de planes en familia como si no tuviera cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compromiso-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="https://uploader.knowmadproject.com/uploads/compromiso6.webp" alt="Vivir sin cobertura" class="share-img">
+                            <div class="overlay">
+                                <p class="compromiso-text">Me comprometo a</p>
+                                <h3>Vivir como si estuviera sin cobertura</h3>
+                                <p class="hashtag">#ViveSinCobertura</p>
+                                <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="cita-final">La conexión más importante no necesita WIFI #ViveSinCobertura</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://uploader.knowmadproject.com/uploads/logo.png" alt="Logo Vive sin cobertura">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos legales</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 Vive Sin Cobertura. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-share">
+            <button id="share-lightbox" class="btn-share"><i class="fas fa-share-alt"></i> Compartir en redes</button>
+        </div>
+    </div>
+
+    <a href="#inicio" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar AOS
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Menú móvil
+            const menuToggle = document.getElementById('menuToggle');
+            const menuItems = document.querySelector('.menu-items');
+            
+            menuToggle.addEventListener('click', function() {
+                menuItems.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!menuToggle.contains(e.target) && !menuItems.contains(e.target)) {
+                    menuItems.classList.remove('active');
+                }
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const menuLinks = document.querySelectorAll('.menu-items a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuItems.classList.remove('active');
+                });
+            });
+            
+            // Lightbox para imágenes compartibles
+            const shareImgs = document.querySelectorAll('.share-img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            const shareBtns = document.querySelectorAll('.share-btn');
+            const shareLightbox = document.getElementById('share-lightbox');
+            
+            // Abrir lightbox al hacer clic en la imagen
+            shareImgs.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightbox.style.display = 'block';
+                    lightboxImg.src = this.src;
+                });
+            });
+            
+            // Abrir lightbox al hacer clic en el botón compartir
+            shareBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const img = this.closest('.img-container').querySelector('.share-img');
+                    lightbox.style.display = 'block';
+                    lightboxImg.src = img.src;
+                });
+            });
+            
+            // Cerrar lightbox
+            closeLightbox.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+            });
+            
+            // Cerrar lightbox al hacer clic fuera de la imagen
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+            
+            // Compartir desde el lightbox usando Web Share API si está disponible
+            if (shareLightbox) {
+                shareLightbox.addEventListener('click', function() {
+                    if (navigator.share) {
+                        fetch(lightboxImg.src)
+                            .then(response => response.blob())
+                            .then(blob => {
+                                const file = new File([blob], 'vivesincobertura.jpg', { type: 'image/jpeg' });
+                                navigator.share({
+                                    title: 'Vive Sin Cobertura',
+                                    text: 'Me uno al movimiento #ViveSinCobertura',
+                                    files: [file]
+                                })
+                                .catch(error => console.error('Error al compartir', error));
+                            });
+                    } else {
+                        // Fallback para navegadores que no soportan Web Share API
+                        alert('Descarga la imagen y compártela en tus redes sociales con el hashtag #ViveSinCobertura');
+                        const link = document.createElement('a');
+                        link.href = lightboxImg.src;
+                        link.download = 'vivesincobertura.jpg';
+                        link.click();
+                    }
+                });
+            }
+            
+            // Botón volver arriba
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            // Cambiar estilo del header al hacer scroll
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

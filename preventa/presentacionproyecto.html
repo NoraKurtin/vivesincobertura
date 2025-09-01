@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivir sin Cobertura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f4f1ee;
+      --color-primary: #264653;
+      --color-secondary: #2a9d8f;
+      --color-secondary-dark: #238b7e;
+      --color-text: #333;
+      --color-text-light: #444;
+      --color-white: #fff;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-lg: 0 15px 30px rgba(42,157,143,0.15);
+      --radius: 10px;
+      --card-width: 190px;
+      --gap: 18px;
+      --card-container-width: calc(var(--card-width) * 4 + var(--gap) * 3);
+      --side-box-width: 260px;
+      --transition: 0.3s ease;
+    }
+
+    /* Base */
+    body {
+      background: var(--color-bg);
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--color-primary);
+    }
+    
+    /* Layouts y contenedores */
+    .main {
+      max-width: calc(var(--side-box-width) + var(--card-container-width) + 60px);
+      margin: 32px auto 0;
+      display: grid;
+      grid-template-columns: var(--side-box-width) 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 60px;
+      row-gap: 32px;
+      padding: 0;
+    }
+    
+    /* Primera fila */
+    .desc-box {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    
+    .kanban {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    
+    /* Segunda fila */
+    .info-box.client-box {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    
+    .info-box.usage-box {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    /* Header */
+    .header {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 56px 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--gap);
+      min-height: 160px;
+    }
+    .titulo-proyecto {
+      font-family: 'Pattaya', sans-serif;
+      font-size: 2.3em;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 1px;
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .by-text {
+      font-size: 0.65em;
+      color: #e0e0e0;
+      margin-left: var(--gap);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-knowmad-pill {
+      display: flex;
+      align-items: center;
+      background: var(--color-white);
+      border-radius: 14px;
+      padding: 4px 12px 4px 6px;
+      box-shadow: var(--shadow-md);
+      gap: 8px;
+    }
+    .logo-knowmad-header { height: 32px; width: 32px; border-radius: 8px; }
+    .logo-knowmad-text-header { height: 28px; }
+
+    /* Cajas base - todas comparten estos estilos */
+    .desc-box, .info-box, .kanban-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 28px 22px 22px;
+    }
+    
+    /* Variaciones de ancho */
+    .desc-box, .info-box.client-box {
+      width: var(--side-box-width);
+      flex: 0 0 var(--side-box-width);
+      position: relative;
+    }
+    .kanban, .info-box.usage-box {
+      width: auto;
+      flex: 0 0 auto;
+    }
+
+    /* Logos */
+    .logo-cliente-desc, .info-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--color-white);
+      object-fit: cover;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--color-white);
+    }
+    .logo-cliente-desc {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .info-logo { margin: 15px auto; display: block; }
+
+    /* Textos */
+    .desc-title, .info-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--color-primary);
+      text-align: center;
+      width: 100%;
+    }
+    .desc-title { margin-top: 38px; }
+    .desc-text, .info-content {
+      font-size: 1em;
+      color: var(--color-text);
+      text-align: center;
+    }
+
+    /* Kanban */
+    .kanban {
+      display: flex;
+      gap: var(--gap);
+      justify-content: flex-start;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+    .kanban-card {
+      padding: 0 var(--gap) var(--gap);
+      width: var(--card-width);
+      flex: 0 0 var(--card-width);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-top: 5px solid var(--color-secondary);
+      transition: all var(--transition);
+      overflow: hidden;
+      position: relative;
+    }
+    .kanban-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 5px;
+      background: var(--color-secondary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--transition);
+    }
+    .kanban-screenshot {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-bottom: 1px solid #e6ede8;
+      border-radius: 0 0 8px 8px;
+      margin: 0 0 12px;
+      display: block;
+      transition: transform var(--transition);
+    }
+    .kanban-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--color-primary);
+      transition: color var(--transition);
+    }
+    .kanban-desc {
+      font-size: 0.98em;
+      color: var(--color-text-light);
+      margin-bottom: var(--gap);
+    }
+    .kanban-btn {
+      margin-top: auto;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      border: none;
+      border-radius: 5px;
+      padding: 8px var(--gap);
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    /* Hover states */
+    .kanban-btn:hover { background: var(--color-secondary-dark); }
+    .kanban-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+    .kanban-card:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    .kanban-card:hover .kanban-title { color: var(--color-secondary); }
+    .kanban-card:hover .kanban-screenshot { transform: scale(1.05); }
+
+    /* Info list */
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+      text-align: left;
+    }
+    .info-list li {
+      padding: 8px 0 8px 25px;
+      position: relative;
+      color: var(--color-text);
+    }
+    .info-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-secondary);
+      font-weight: bold;
+    }
+    .info-tip {
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--color-bg);
+      border-radius: 8px;
+      font-size: 0.9em;
+      color: var(--color-primary);
+      text-align: left;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 80px;
+      padding: 40px 16px 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      background: var(--color-white);
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .footer-text {
+      font-size: 0.8em;
+      color: var(--color-bg);
+      max-width: 700px;
+      padding: 0 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1140px) {
+      .main { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        max-width: var(--card-container-width);
+      }
+      
+      .desc-box, .info-box.client-box, 
+      .kanban, .info-box.usage-box { 
+        width: 100%;
+        flex: none;
+        max-width: var(--card-container-width);
+        order: initial;
+        margin: 0;
+      }
+      
+      .desc-box { margin-bottom: 24px; }
+      .kanban { margin-bottom: 24px; }
+      .info-box.client-box { margin-bottom: 24px; }
+      
+      .kanban {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+      
+      .kanban-card {
+        width: calc(50% - 12px);
+        flex: 0 0 calc(50% - 12px);
+      }
+      .header { 
+        flex-direction: column; 
+        gap: 8px; 
+        padding: 40px 15px 30px; 
+      }
+      .titulo-proyecto { 
+        font-size: 2em; 
+        text-align: center; 
+        flex-direction: column; 
+      }
+      .by-text { 
+        margin-left: 0; 
+        margin-top: 5px; 
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main { padding: 0 10px; margin-top: 20px; }
+      .desc-box, .info-box { padding: 24px 15px 18px; }
+      .kanban-card { 
+        padding: 0 12px 15px; 
+        width: 100%;
+        flex: 0 0 100%;
+      }
+      .titulo-proyecto { font-size: 1.8em; }
+      .footer { 
+        margin-top: 60px;
+        padding: 30px 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="titulo-proyecto">
+      Vivir sin Cobertura
+      <span class="by-text">by 
+        <span class="logo-knowmad-pill">
+          <img src="https://knowmadproject.com/images/logo/favicon.png" alt="Knowmad Logo" class="logo-knowmad-header">
+          <img src="https://knowmadproject.com/images/logo/logo-text.png" alt="Knowmad Text Logo" class="logo-knowmad-text-header">
+        </span>
+      </span>
+    </div>
+  </div>
+  <div class="main">
+    <div class="desc-box">
+      <img src="https://uploader.knowmadproject.com/uploads/favicon.png" alt="Logo Cliente" class="logo-cliente-desc">
+      <div class="desc-title">Descripción del Proyecto</div>
+      <div class="desc-text">
+        Proyecto "Vivir sin Cobertura" enfocado en proporcionar soluciones y recursos para situaciones donde no existe conectividad o cobertura de red. Exploramos alternativas y herramientas que permiten mantener la comunicación y acceso a información en entornos sin conexión.
+      </div>
+    </div>
+    <div class="kanban">
+      <div class="kanban-card">
+        <img src="https://www.freemockupworld.com/wp-content/uploads/2020/07/Photo-Frame-Mockup-01.jpg" alt="Screenshot Propuesta Clásica" class="kanban-screenshot">
+        <div class="kanban-title">Propuesta Clásica</div>
+        <div class="kanban-desc">Diseño tradicional y atemporal con elementos estilísticos que transmiten confianza y estabilidad. Ideal para un público amplio y variado.</div>
+        <button class="kanban-btn" onclick="window.location.href='propuestas/version4-clasica.html'">Ver Propuesta</button>
+      </div>
+      <div class="kanban-card">
+        <img src="https://www.freemockupworld.com/wp-content/uploads/2020/07/Photo-Frame-Mockup-01.jpg" alt="Screenshot Propuesta Atrevida" class="kanban-screenshot">
+        <div class="kanban-title">Propuesta Atrevida</div>
+        <div class="kanban-desc">Concepto innovador con elementos visuales dinámicos y una paleta de colores vibrante que destaca sobre la competencia.</div>
+        <button class="kanban-btn" onclick="window.location.href='propuestas/version2-elegante.html'">Ver Propuesta</button>
+      </div>
+      <div class="kanban-card">
+        <img src="https://www.freemockupworld.com/wp-content/uploads/2020/07/Photo-Frame-Mockup-01.jpg" alt="Screenshot Propuesta Rompedora" class="kanban-screenshot">
+        <div class="kanban-title">Propuesta Rompedora</div>
+        <div class="kanban-desc">Enfoque disruptivo con navegación no convencional y elementos interactivos que crean una experiencia única para el usuario.</div>
+        <button class="kanban-btn" onclick="window.location.href='propuestas/version3-rompedora.html'">Ver Propuesta</button>
+      </div>
+      <div class="kanban-card">
+        <img src="https://www.freemockupworld.com/wp-content/uploads/2020/07/Photo-Frame-Mockup-01.jpg" alt="Screenshot Propuesta Minimalista" class="kanban-screenshot">
+        <div class="kanban-title">Propuesta Minimalista</div>
+        <div class="kanban-desc">Diseño limpio y esencial que prioriza el contenido, con una interfaz intuitiva y eficiente para el usuario.</div>
+        <button class="kanban-btn" onclick="window.location.href='propuestas/version1-minimalista.html'">Ver Propuesta</button>
+      </div>
+    </div>
+    
+    <div class="info-box client-box">
+      <div class="info-title">Acerca del Cliente</div>
+      <img src="https://uploader.knowmadproject.com/uploads/logo_sapos_redondo_firma.jpg" alt="Logo Sapos y Princesas" class="info-logo">
+      <div class="info-content">
+        <p>Sapos y Princesas es una reconocida plataforma de contenido familiar que ofrece ideas, consejos y actividades para padres e hijos. Con más de una década de experiencia, se han convertido en un referente en el sector del ocio familiar en España.</p>
+      </div>
+    </div>
+
+    <div class="info-box usage-box">
+      <div class="info-title">Cómo Usar Este Proyecto</div>
+      <div class="info-content">
+        <p>Este es un índice móvil diseñado para máxima flexibilidad y facilidad de uso:</p>
+        <ul class="info-list">
+          <li>No requiere instalación - funciona directamente en el navegador</li>
+          <li>Cada propuesta es independiente y autónoma</li>
+          <li>Los archivos HTML en las carpetas son independientes y pueden compartirse individualmente</li>
+          <li>Compatible con todos los dispositivos y navegadores modernos</li>
+          <li>Funciona offline una vez cargado</li>
+        </ul>
+        <div class="info-tip">
+          💡 Consejo: Puedes compartir cualquier propuesta individual simplemente enviando su archivo HTML correspondiente.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="footer-logo">
+      <img src="https://knowmadproject.com/images/logo/favicon.png" alt="Knowmad Logo" style="height: 24px; width: 24px;">
+      <img src="https://knowmadproject.com/images/logo/logo-text.png" alt="Knowmad Text Logo" style="height: 22px;">
+    </div>
+    <div class="footer-text">
+      Esto es una propuesta de Knowmad Project para Sapos y Princesas SL CIF B84430990 y se considera individual e intrasferible.
+    </div>
+  </div>
+</body>
+</html> 
