@@ -570,6 +570,14 @@ footer {
         font-size: 1.1rem;
     }
 
+    .expertos-grid {
+        justify-items: center;
+    }
+
+    .experto-item {
+        max-width: 180px;
+    }
+
     .footer-links {
         display: flex;
         flex-direction: column;
@@ -628,9 +636,35 @@ footer {
         max-width: 300px;
     }
 
+    .expertos-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .experto-item {
+        max-width: 200px;
+        width: 100%;
+    }
+
     .experto-item img {
         width: 160px;
         height: 240px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .experto-hover {
+        padding: 15px;
+    }
+
+    .experto-hover p {
+        font-size: 14px;
+        line-height: 1.3;
+        text-align: center;
+        max-width: 140px;
+        margin: 0 auto;
     }
 
     .compromiso-item {
