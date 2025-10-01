@@ -1288,10 +1288,10 @@ footer {
 }
 
 .logo-creador {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    height: 120px;
+    width: auto;
+    border-radius: 0;
+    box-shadow: none;
     transition: transform 0.3s ease;
 }
 
@@ -1310,8 +1310,8 @@ footer {
     }
     
     .logo-creador {
-        height: 70px;
-        width: 70px;
+        height: 120px;
+        width: auto;
     }
 }
 
