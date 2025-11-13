@@ -98,13 +98,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menú hamburguesa
     const menuBtn = document.getElementById('menuHamburguesa');
     const navUl = document.querySelector('nav ul');
-    menuBtn.addEventListener('click', function() {
-        navUl.classList.toggle('active');
-    });
-    // Cerrar menú al hacer click fuera
-    document.addEventListener('click', function(e) {
-        if (!menuBtn.contains(e.target) && !navUl.contains(e.target)) {
-            navUl.classList.remove('active');
+    const menuIcon = menuBtn ? menuBtn.querySelector('i') : null;
+    const navLinks = navUl ? navUl.querySelectorAll('a') : [];
+
+    const setMenuState = (isOpen) => {
+        if (!menuBtn || !navUl) return;
+        navUl.classList.toggle('active', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        document.body.classList.toggle('menu-open', isOpen);
+
+        if (menuIcon) {
+            menuIcon.classList.toggle('fa-bars', !isOpen);
+            menuIcon.classList.toggle('fa-xmark', isOpen);
         }
-    });
+    };
+
+    if (menuBtn && navUl) {
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = !navUl.classList.contains('active');
+            setMenuState(isOpen);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => setMenuState(false));
+        });
+
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (!menuBtn.contains(e.target) && !navUl.contains(e.target)) {
+                setMenuState(false);
+            }
+        });
+    }
 }); 
